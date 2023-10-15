@@ -2,6 +2,7 @@ import { createAsyncThunk, createSlice } from '@reduxjs/toolkit'
 import axios from 'axios'
 import Swal from 'sweetalert2';
 
+const reg_api = "https://wtsacademy.dedicateddevelopers.us/api/user/signup";
 const signin_api = "https://wtsacademy.dedicateddevelopers.us/api/user/signin";
 const api_url = "http://localhost:2000/completed-project";
 
@@ -17,6 +18,20 @@ const initial_value = {
     errMsg: "",
     authToken: ""
 };
+
+export const sign_up = createAsyncThunk("admin/sign_up",
+    async (userdata) => {
+        const res = await axios.post(reg_api, userdata, {
+            headers: {
+                "Content-Type": "application/form-data",
+                "Access-Control-Allow-Origin": "*"
+            }
+        })
+        // console.log("api res: ",res.data);
+        return res?.data;
+    })
+    
+
 export const sign_In = createAsyncThunk("admin/sign_In",
     async (userdata) => {
         const res = await axios.post(signin_api, userdata, {
@@ -64,6 +79,40 @@ export const AdminSlice = createSlice({
     name: "admin",
     initialState: initial_value,
     extraReducers: (builder) => {
+
+        builder.addCase(sign_up.pending, (state, action) => {
+            state.isLoading = true;
+        })
+        builder.addCase(sign_up.fulfilled, (state, action) => {
+            console.log("action:", action);
+            if (action.payload.status === 200) {
+                state.isLoading = false;
+                state.status = action.payload.status;
+                state.first_name = action.payload.data.first_name;
+                state.last_name = action.payload.data.last_name;
+                state.email = action.payload.data.email;
+                state.message = action.payload.data.message;
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Your account has been created',
+                    showConfirmButton: true,
+                    timer: 1500
+                })
+            }
+            else {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Oops...',
+                    text: 'Something went wrong!',
+                })
+            }
+        })
+        builder.addCase(sign_up.rejected, (state, action) => {
+            console.log("actions:", action);
+            state.isLoading = false;
+            state.create = [];
+            state.error = action.error.message;
+        })
 
         builder.addCase(sign_In.pending, (state, action) => {
             state.isLoading = true;

@@ -1,10 +1,9 @@
 import React, { useState } from 'react'
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { BsArrowLeftSquare } from "react-icons/bs";
 import { sign_In } from '../../Redux/AllSlice/View';
 import { Link, useNavigate } from 'react-router-dom';
 import './Login.css'
-
 
 const Login = () => {
   const navigate = useNavigate();
@@ -13,6 +12,7 @@ const Login = () => {
     email: "",
     password: ""
   });
+
 
   let changehandeler = (event) => {
     event.persist();
@@ -48,7 +48,7 @@ const Login = () => {
         <label htmlFor="password">Password </label>
         <input type="password" name='password' id='password' placeholder='Enter password' onChange={changehandeler} />
         <p>Forgot password ?</p>
-        <p><span className="spcolor">Don't have an account?</span> Create an account</p>
+        <p><span className="spcolor">Don't have an account?</span> <Link to="/create-account"> Create an account</Link></p>
 
         <input type="submit" id='submitt' value="Login" />
 

@@ -40,6 +40,9 @@
     padding-bottom:17px;
 
 }
+.login-form a{
+    text-decoration: none;
+}
 .spcolor{
     color: rgb(18, 17, 17);
 }

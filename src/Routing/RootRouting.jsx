@@ -17,6 +17,7 @@ import ContactPending from '../Components/Crud/Pending/ContactPending/ContactPen
 import Estimation from '../Components/Estimation/Estimation'
 import EstimationPending from '../Components/Crud/Pending/EstimationPending/EstimatationPending'
 import ProtectedRoutes from './ProtectedRoutes'
+import CreateAccount from '../Components/CreateAccount/CreateAccount'
 import Login from '../Components/Login/Login'
 import ContactMember from '../Components/ContactMember/ContactMember'
 
@@ -32,6 +33,7 @@ const RootRouting = () => {
           <Route path='about-us' element={<About />} />
           <Route path='contact' element={<Contact />} />
           <Route path='login' element={<Login />} />
+          <Route path='create-account' element={<CreateAccount />} />
           <Route path='add-completed-project' element={<AddCompleted />} />
           <Route path='remove-completed-project' element={<RemoveCompleted />} />
           <Route path='admin' element={<Admin />} />
