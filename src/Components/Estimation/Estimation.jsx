@@ -19,7 +19,7 @@ const Estimation = () => {
     const [image, setImage] = useState({});
 
     const imageHandeler = (e) => {
-        console.log(e.target.files);
+        // console.log(e.target.files);
         const data = new FileReader();
         data.addEventListener('load', () => {
             setImage(data.result);
@@ -36,7 +36,7 @@ const Estimation = () => {
 
     let submitHandeler = (event) => {
         event.preventDefault();
-        console.log("submitted value :", inputState);
+        // console.log("submitted value :", inputState);
 
         let detail = {
             full_name: inputState.full_name,

@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react'
-import CompletedProject from '../CompletedProject/CompletedProject'
 import Carousel from 'react-material-ui-carousel'
 import { useDispatch } from 'react-redux'
 import { carousal } from '../../Redux/AllSlice/User'
+import CompletedProject from '../CompletedProject/CompletedProject'
 import './Home.css'
 
 
@@ -12,7 +12,7 @@ const Home = () => {
   useEffect(() => {
     dispatch(carousal())
       .then(ress => {
-        console.log("Res :", ress);
+        // console.log("Res :", ress);
         setImage(ress.payload);
       })
       .catch(error => {
@@ -32,9 +32,9 @@ const Home = () => {
           infiniteLoop={true}
           emulateTouch={true}
         >
-          { image.map(car => (
-            <div className="posterImage">
-              <img src={car.carousel} alt='' />
+          { image.map(muiCarousel => (
+            <div key={muiCarousel.id}>
+              <img src={muiCarousel.carousel} alt='' />
             </div>
           ))}
         </Carousel>

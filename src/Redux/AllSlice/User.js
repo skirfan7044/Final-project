@@ -146,7 +146,7 @@ export const UserSlice = createSlice({
 
 
         builder.addCase(contactUpdate.pending, (state, action) => {
-            console.log("Action: ", action);
+            // console.log("Action: ", action);
             state.isLoading = true;
         })
         builder.addCase(contactUpdate.fulfilled, (state, action) => {
@@ -171,7 +171,7 @@ export const UserSlice = createSlice({
 
 
         builder.addCase(contactDelete.pending, (state, action) => {
-            console.log("Action: ", action);
+            // console.log("Action: ", action);
             state.isLoading = true;
         })
         builder.addCase(contactDelete.fulfilled, (state, action) => {
@@ -189,7 +189,7 @@ export const UserSlice = createSlice({
             }, 2000);
         })
         builder.addCase(contactDelete.rejected, (state, action) => {
-            console.log("Action: ", action);
+            // console.log("Action: ", action);
             state.isLoading = false;
             Swal.fire({
                 icon: 'error',
@@ -202,7 +202,7 @@ export const UserSlice = createSlice({
 
 
         builder.addCase(estimationPost.pending, (state, action) => {
-            console.log("Action: ", action);
+            // console.log("Action: ", action);
             state.isLoading = true;
         })
         builder.addCase(estimationPost.fulfilled, (state, action) => {
@@ -246,7 +246,7 @@ export const UserSlice = createSlice({
 
 
         builder.addCase(EstimationUpdate.pending, (state, action) => {
-            console.log("Action: ", action);
+            // console.log("Action: ", action);
             state.isLoading = true;
         })
         builder.addCase(EstimationUpdate.fulfilled, (state, action) => {
@@ -270,11 +270,11 @@ export const UserSlice = createSlice({
         })
 
         builder.addCase(estimationDelete.pending, (state, action) => {
-            console.log("Action: ", action);
+            // console.log("Action: ", action);
             state.isLoading = true;
         })
         builder.addCase(estimationDelete.fulfilled, (state, action) => {
-            console.log("Action: ", action);
+            // console.log("Action: ", action);
             state.isLoading = false;
             Swal.fire({
                 icon: 'success',
@@ -287,7 +287,7 @@ export const UserSlice = createSlice({
             }, 2100);
         })
         builder.addCase(estimationDelete.rejected, (state, action) => {
-            console.log("Action: ", action);
+            // console.log("Action: ", action);
             state.isLoading = false;
             Swal.fire({
                 icon: 'error',

@@ -55,7 +55,7 @@ export const completed = createAsyncThunk("admin/completed",
 export const deleteCompleted = createAsyncThunk("admin/deleteCompleted",
     async (id) => {
         const res = await axios.delete(`${api_url}/${id}`)
-        console.log("Delete response: ", res);
+        // console.log("Delete response: ", res);
         return res?.data;
     });
 
@@ -94,7 +94,7 @@ export const AdminSlice = createSlice({
             }
         })
         builder.addCase(sign_In.rejected, (state, action) => {
-            console.log("actions:", action);
+            // console.log("actions:", action);
             state.isLoading = false;
             state.create = [];
             state.error = action.error.message;
@@ -106,7 +106,7 @@ export const AdminSlice = createSlice({
             state.isLoading = true;
         })
         builder.addCase(logOut.fulfilled, (state, action) => {
-            console.log("Action for all completed projects: ", action);
+            // console.log("Action for all completed projects: ", action);
             state.isLoading = false;
             Swal.fire({
                 icon: 'success',

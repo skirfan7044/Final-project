@@ -21,7 +21,7 @@ const AddCompleted = () => {
   }
 
   const changehandeler1 = (e) => {
-    console.log(e.target.files);
+    // console.log(e.target.files);
     const data = new FileReader();
     data.addEventListener('load', () => {
       setImage1(data.result);
@@ -30,7 +30,7 @@ const AddCompleted = () => {
   }
 
   const changehandeler2 = (e) => {
-    console.log(e.target.files);
+    // console.log(e.target.files);
     const data = new FileReader();
     data.addEventListener('load', () => {
       setImage2(data.result);
@@ -39,7 +39,7 @@ const AddCompleted = () => {
   }
 
   const changehandeler3 = (e) => {
-    console.log(e.target.files);
+    // console.log(e.target.files);
     const data = new FileReader();
     data.addEventListener('load', () => {
       setImage3(data.result);
@@ -48,7 +48,7 @@ const AddCompleted = () => {
   }
 
   const changehandeler4 = (e) => {
-    console.log(e.target.files);
+    // console.log(e.target.files);
     const data = new FileReader();
     data.addEventListener('load', () => {
       setImage4(data.result);

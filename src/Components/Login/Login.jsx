@@ -22,7 +22,7 @@ const Login = () => {
 
   let submitHandeler = (event) => {
     event.preventDefault();
-    console.log("submitted value :", inputState);
+    // console.log("submitted value :", inputState);
 
     let formData = new FormData();
     formData.append("email", inputState.email)

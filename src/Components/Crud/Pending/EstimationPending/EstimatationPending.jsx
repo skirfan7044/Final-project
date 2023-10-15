@@ -9,7 +9,7 @@ const EstimationPending = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const { eid } = useParams();
-  console.log("Collected data from useParams :", eid);
+  // console.log("Collected data from useParams :", eid);
 
   const [state, setState] = useState({
     full_name: "",
@@ -28,7 +28,7 @@ const EstimationPending = () => {
         // console.log("then :",res);
         const est = ress.payload.find((user) => user.id == eid);
         setState(est)
-        console.log("data from sub", est);
+        // console.log("data from sub", est);
       })
       .catch(err => {
         console.log("Error: ", err);

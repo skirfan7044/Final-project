@@ -15,7 +15,7 @@ const RemoveCompleted = () => {
     dispatch(completed())
       .then(ress => {
         setStateDelete(ress.payload)
-        console.log("Fetched projects: ", ress.payload);
+        // console.log("Fetched projects: ", ress.payload);
       })
       .catch(err => {
         console.log("Error: ", err);

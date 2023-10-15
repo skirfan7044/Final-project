@@ -19,7 +19,7 @@ const EstimationView = () => {
     dispatch(estimationView())
       .then(res => {
         setState(res.payload)
-        console.log("Fetched projects: ",res.payload);
+        // console.log("Fetched projects: ",res.payload);
       })
       .catch(err => {
         console.log("Error: ", err);

@@ -10,7 +10,7 @@ const ContactPending = () => {
   const dispatch = useDispatch();
   const { cid } = useParams();
   const navigate = useNavigate();
-  console.log("Collected data from useParams :", cid);
+  // console.log("Collected data from useParams :", cid);
 
   const [inputState, setInputState] = useState({
     full_name: "", 
@@ -30,10 +30,10 @@ const ContactPending = () => {
         // console.log("then :",res);
         const sub = ress.payload.find((user) => user.id == cid)
         setInputState(sub)
-        console.log("data from sub", sub);
+        // console.log("data from sub", sub);
       })
       .catch(err => {
-        console.log("Error: ", err);
+        // console.log("Error: ", err);
       })
 
   }, [cid,dispatch]);

@@ -53,12 +53,12 @@ const Contact = () => {
 
     }
     setInput({ ...inputState, [name]: value, isError: err });
-    console.log(err);
+    // console.log(err);
   }
 
   let submitHandeler = (event) => {
     event.preventDefault();
-    console.log("submitted value :", inputState);
+    // console.log("submitted value :", inputState);
 
     let detail = {
       full_name: inputState.full_name,
