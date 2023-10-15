@@ -1,0 +1,36 @@
+.divhead button {
+    width: 110px;
+    padding: 7px 4px;
+    background-color: rgb(105, 142, 20);
+    border: solid white 1px;
+    color: white;
+    border-radius: 3px;
+}
+
+.divhead button:hover {
+    background-color: rgb(117, 160, 16);
+}
+
+@media screen and (max-width:1400px) {
+    .divhead button {
+        width: 210px;
+        margin-left: 15px;
+        margin-right: -25px;
+    }
+}
+
+@media screen and (max-width:500px) {
+    .divhead h3 {
+        margin-left: -40px;
+        margin-right: 25px;
+    }
+   .comping .divhead{
+    justify-content: space-around;
+       
+    }
+    .divhead button {
+        width: 230px;
+        margin-right: -42px;
+        margin-left: -15px;
+    }
+}

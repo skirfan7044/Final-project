@@ -1,0 +1,64 @@
+.imgbox {
+    width: 70%;
+    height: auto;
+    margin: 60px auto 30px;
+    border: solid rgb(188, 187, 187) 2px;
+    background-color: white;
+    border-radius: 2px;
+    padding-bottom: 5px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.imgbox h2 {
+    width: 100%;
+    text-align: center;
+    background-image: linear-gradient(to bottom left, rgb(92, 138, 14), rgb(119, 154, 36), rgb(95, 129, 15));
+    color: white;
+    padding: 8px 0px;
+    border-bottom: solid rgb(188, 187, 187) 2px;
+    margin-bottom: 4px;
+}
+
+.imgbox img {
+    width: 49%;
+    padding: 5px;
+    margin: 5px 0px 5px;
+    border: solid rgb(188, 187, 187) 2px;
+    border-radius: 2px;
+}
+
+.imgbox img:hover {
+    transform: scale(1.3);
+    z-index: 2;
+    transition: 1.2s;
+    border: none;
+}
+@media screen and (max-width:1500px) {
+    .imgbox {
+        width: 80%;
+    }
+}
+
+@media screen and (max-width:795px) {
+    .imgbox {
+        width: 85%;
+    }
+}
+
+@media screen and (max-width:900px) {
+    .imgbox {
+        width: 90%;
+    }
+}
+@media screen and (max-width:650px) {
+    .imgbox {
+        width: 96%;
+        margin-top: 25px;
+    }
+    .imgbox img {
+        width: 98%;
+    }
+}

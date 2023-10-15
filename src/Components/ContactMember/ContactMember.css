@@ -1,0 +1,108 @@
+.t-head {
+    width: 80%;
+    background-image: linear-gradient(to bottom left, rgb(92, 138, 14), rgb(119, 154, 36), rgb(95, 129, 15));
+    color: white;
+    padding:15px 20px;
+    margin: 75px auto 0px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: solid rgb(188, 187, 187) 2px;
+    border-bottom: none;
+}
+
+.parentcon {
+    width: 80%;
+    height: auto;
+    margin: 0px auto 65px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    border: solid rgb(188, 187, 187) 2px;
+    background-color: white;
+}
+
+.parentcon .childcon {
+    width: 19%;
+    border: solid rgb(188, 187, 187) 2px;
+    border-radius: 3px;
+    padding: 5px;
+    margin: 20px 10px;
+}
+
+.parentcon .childcon h4,h3 {
+    padding: 5px 7px;
+}
+
+.parentcon .childcon img {
+    width: 100%;
+    padding: 2px;
+    border: solid rgb(188, 187, 187) 2px;
+}
+
+@media screen and (max-width:1500px) {
+    .t-head {
+        width: 85%;
+    }
+
+    .parentcon {
+        width: 85%;
+    }
+}
+
+@media screen and (max-width:1250px) {
+    .parentcon{
+        margin: 0px auto 40px;
+    }
+    .parentcon .childcon {
+        width: 25%;
+    }
+}
+
+@media screen and (max-width:930px) {
+    .t-head {
+        margin-top: 30px;
+    }
+    .parentcon{
+        margin-bottom: 30px;
+    }
+    .parentcon .childcon {
+        width: 35%;
+    }
+
+    .t-head h2 {
+        font-size: 20px;
+    }
+}
+@media screen and (max-width:750px) {
+    .t-head {
+        width: 97%;
+    }
+
+    .parentcon {
+        width: 97%;
+    }
+    .parentcon .childcon {
+        width: 45%;
+    }
+    .t-head h2 {
+        font-size: 17px;
+    }
+}
+@media screen and (max-width:450px) {
+    .t-head {
+        margin-top: 25px;
+    }
+    .parentcon .childcon {
+        width: 95%;
+        margin-bottom: 10px;
+    }
+    .t-head h2 {
+        font-size: 14px;
+    }
+    .parentcon .childcon h4,h3 {
+        font-size: 20px;
+        padding: 7px 7px;
+}
+}

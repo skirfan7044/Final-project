@@ -1,0 +1,146 @@
+.main{
+   width: 80%;
+   margin: 50px auto;
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: space-evenly;
+}
+
+.containerrr{
+   width: 40%;
+   margin:50px 50px 100px;
+   background-color: white;
+   text-align: start;
+   padding: 40px 40px 40px 40px;
+   box-shadow: rgb(122, 120, 120) 2px 2px 3px 3px;
+}
+.containerrr h3{
+   margin-bottom: 10px;
+   font-size: 23px;
+}
+.containerrr button{
+   margin-top: 30px;
+   width: 40%;
+   height: 35px;
+   border-radius: 5px;
+   background-color: rgb(113, 153, 19);
+   color: rgb(255, 255, 255);
+   border: solid rgb(161, 159, 159) 2px;
+}
+.containerrr button:hover{
+   background-color:rgb(124, 165, 27);
+   color: white;
+   transition: .5s;
+}
+.main .imgboxx{
+   width: 40%;
+   height: 380px;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   margin:50px 50px 100px;
+   padding: 10px;
+   border:  solid rgb(179, 175, 175) 1px;
+   background-color: white;
+   box-shadow: rgb(122, 120, 120) 2px 2px 3px 3px;
+}
+.main .imgboxx img{
+   width: 100%;
+   height: 100%;
+   border:  solid rgb(207, 203, 203) 2px;
+}
+.main .imgboxx img:hover{
+   transform: scale(1.3);
+   z-index: 2;
+   transition: 1.2s;
+}
+
+@media screen and (max-width:1519px) {
+   .main{
+      width: 90%;
+   }
+   .containerrr{
+       width: 45%;
+   }
+   .containerr button{
+       width: 50%;
+   }  
+}
+@media screen and (max-width:1519px) {
+   .main{
+      width: 90%;
+   }
+   .containerrr{
+       width: 45%;
+   }
+   .imgboxx{
+      width: 45%;
+   } 
+}
+@media screen and (max-width:1300px) {
+   .main{
+      width: 97%;
+   }
+   .containerrr{
+       width: 45%;
+   }
+   .imgboxx{
+      width: 45%;
+
+   } 
+}
+@media screen and (max-width:1200px) {
+   .main{
+      width: 97%;
+   }
+   .main .containerrr{
+       width: 60%;
+       margin: 30px auto;
+   }
+   .main .imgboxx{
+      width: 60%;
+      margin: 30px auto;
+   } 
+}
+@media screen and (max-width:1000px) {
+   .main{
+      width: 97%;
+   }
+   .main .containerrr{
+       width: 75%;
+       margin: 30px auto;
+   }
+   .main .imgboxx{
+      width: 75%;
+      margin: 30px auto;
+   } 
+}
+@media screen and (max-width:800px) {
+   .containerrr{
+       width: 75%;
+   }
+   .containerrr button{
+       width: 60%;
+   }
+}
+
+@media screen and (max-width:600px) {
+   .main{
+      width: 100%;
+   }
+   .main .containerrr{
+       width: 95%;
+       margin: -15px auto 30px;
+       padding: 40px 10px;
+   }
+   .main .imgboxx{
+      width: 95%;
+      margin: 0px auto -20px;
+   }  
+   .containerrr h3{
+      font-size: 18px;
+   }
+}
+
+
+

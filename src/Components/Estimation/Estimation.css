@@ -1,0 +1,30 @@
+
+#image{
+    border: solid rgb(99, 154, 27) 1px;
+}
+#r-icon{
+    padding: 10px 15px 0px 24px;
+    margin-bottom: -60px;
+}
+.e-h{ 
+    text-align: center;
+    padding: 0px 0px 32px;
+    margin-top: -10px;
+    color: rgb(99, 154, 27);
+}
+@media screen and (max-width:1530px) {
+    #r-icon{
+        padding: 10px 0px 0px 43px;
+    }
+}
+@media screen and (max-width:460px) {
+    #r-icon{
+        padding: 10px 5px 0px 35px;
+        margin-bottom: -20px;
+    }
+}
+@media screen and (max-width:400px) {
+    #r-icon{
+        padding: 10px 7px 0px 35px;
+    }
+}

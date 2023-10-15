@@ -1,0 +1,197 @@
+.headp img {
+    width: 100%;
+}
+
+.content {
+    width: 75%;
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 50px auto;
+    border: solid rgb(111, 110, 110) 2px;
+    border-radius: 3px;
+    flex-direction: row;
+    box-shadow: 2px 7px 6px 2px grey;
+    background-color: white;
+}
+
+.content h1 {
+    width: 100%;
+    background-image: linear-gradient(to bottom left, rgb(92, 138, 14), rgb(119, 154, 36), rgb(95, 129, 15));
+    color: white;
+    border-bottom: solid rgb(111, 110, 110)2px;
+    color: white;
+    text-align: center;
+    padding: 3px;
+}
+
+.content .c2 {
+    width: 65%;
+    padding: 10px 10px;
+}
+
+.content .c2 h4 {
+    font-size: 18px;
+    padding: 5px 10px;
+    font-size: 20px;
+}
+
+.content .c3 {
+    width: 35%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    border-left: solid rgb(111, 110, 110) 2px;
+    padding: 10px 15px;
+}
+
+.content .c3 h2 {
+    width: 87%;
+    text-align: center;
+    font-size: 30px;
+    border: solid rgb(71, 97, 53) 3px;
+    border-radius: 2px;
+    color: rgb(61, 108, 7);
+}
+
+.content .c3 .head1 {
+    text-align: center;
+    width: 70%;
+    background-color: blue;
+    padding: 10px;
+    background-image: linear-gradient(to bottom left, rgb(62, 98, 15), rgb(88, 121, 11));
+    color: white;
+    border-radius: 7px;
+}
+
+.content .c3 .head2 {
+    text-align: center;
+    width: 70%;
+    background-color: blue;
+    padding: 10px;
+    background-image: linear-gradient(to bottom left, rgb(62, 98, 15), rgb(88, 121, 11));
+    color: white;
+    color: white;
+    border-radius: 7px;
+}
+
+.content .c3 .head3 {
+    text-align: center;
+    width: 70%;
+    background-color: blue;
+    padding: 10px;
+    background-image: linear-gradient(to bottom left, rgb(62, 98, 15), rgb(88, 121, 11));
+    color: white;
+    color: white;
+    border-radius: 7px;
+}
+
+.content .c3 .head4 {
+    text-align: center;
+    width: 70%;
+    background-color: blue;
+    padding: 10px;
+    background-image: linear-gradient(to bottom left, rgb(62, 98, 15), rgb(88, 121, 11));
+    color: white;
+    color: white;
+    border-radius: 7px;
+}
+
+@media screen and (max-width:1650px) {
+    .content {
+        width: 80%;
+    }
+}
+
+@media screen and (max-width:1450px) {
+    .content {
+        width: 85%;
+    }
+}
+
+@media screen and (max-width:1252px) {
+    .content {
+        width: 85%;
+    }
+
+    .content .c2 {
+        width: 100%;
+        border-bottom: solid rgb(179, 178, 178) 2px;
+    }
+
+    .content .c3 {
+        width: 100%;
+        border-left: none;
+    }
+
+    .content .c3 h2 {
+        margin-top: 30px;
+        margin-bottom: 10px;
+    }
+
+    .content .c3 h3 {
+        margin: 10px 20px;
+    }
+
+    .content .c3 .head1 {
+        width: 50%;
+    }
+
+    .content .c3 .head2 {
+        width: 50%;
+    }
+
+    .content .c3 .head3 {
+        width: 50%;
+    }
+
+    .content .c3 .head4 {
+        width: 50%;
+    }
+
+    .content .c3 h2 {
+        width: 65%;
+    }
+
+}
+
+@media screen and (max-width:800px) {
+    .content {
+        width: 90%;
+        margin-top: 20px;
+    }
+
+    .content .c3 .head1 {
+        width: 60%;
+    }
+
+    .content .c3 .head2 {
+        width: 60%;
+    }
+
+    .content .c3 .head3 {
+        width: 60%;
+    }
+
+    .content .c3 .head4 {
+        width: 60%;
+    }
+
+    .content .c3 h2 {
+        width: 80%;
+    }
+}
+
+@media screen and (max-width:500px) {
+    .content {
+        width: 96%;
+        margin-top: 10px;
+        margin-bottom: 20px;
+    }
+
+    .content .c3 h2 {
+        font-size: 22px;
+    }
+}

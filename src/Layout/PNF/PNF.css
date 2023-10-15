@@ -1,0 +1,32 @@
+.pnf h2{
+    width: 50%;
+    text-align: center;
+    margin: 250px auto;
+    background-color: black;
+    color: yellow;
+    padding: 110px 30px;
+    font-size: 35px;
+}
+@media screen and (max-width:900px) {
+    .pnf h2{
+        width: 70%;
+        font-size: 30px;
+        margin: 150px auto;
+    }
+}
+@media screen and (max-width:500px) {
+    .pnf h2{
+        width: 90%;
+        font-size: 22px;
+        margin: 50px auto 40px;
+        padding: 50px 30px ;
+    }
+}
+@media screen and (max-width:500px) {
+    .pnf h2{
+        width: 95%;
+        font-size: 17px;
+        margin: 25px auto 11px;
+        padding: 30px 30px ;
+    }
+}

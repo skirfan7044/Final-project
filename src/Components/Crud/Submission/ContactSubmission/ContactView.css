@@ -1,0 +1,90 @@
+.table-box{
+    width: 50%;
+    height: auto;
+    margin:90px auto;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: center;
+    text-align: center;
+
+}
+.table-box .sub-child{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 10px 15px;
+    background-color:rgb(90, 144, 19);
+    border: solid rgb(3, 3, 3) 2px;
+    border-bottom: none;
+    color: white;
+}
+.table-box table {
+    width: 100%;
+    background-color: rgb(9, 11, 71);
+    color: white;
+}
+.table-box .tablehead th{
+    border: solid white 2px;
+    background-color:rgb(90, 144, 19);
+    padding: 12px;
+
+}
+.table-box .tablebody td{
+    border: solid white 2px;
+    padding: 7px;
+
+}
+.table-box .tablebody button{
+   width: 80px;
+   padding: 2px;
+}
+.table-box .tablebody button:hover{
+    background-color:rgb(90, 144, 19);
+    color: white;
+    border: solid white 2px;
+ }
+ .btnred button:hover{
+    background-color: red !important;
+    border: solid red 2px !important;
+ }
+ @media screen and (max-width:1400px) {
+   .table-box{
+    width: 65%;
+   }
+}
+@media screen and (max-width:1100px) {
+    .table-box{
+     width: 85%;
+    }
+ }
+ @media screen and (max-width:800px) {
+    .table-box{
+     width: 90%;
+     margin: 30px auto;
+    }
+    .table-box .tablebody button{
+        width: 60px;
+        padding: 2px;
+     }
+ }
+ @media screen and (max-width:500px) {
+    .table-box{
+     width: 99%;
+     margin: 30px auto 15px;
+    }
+
+     .table-box table{
+        width: 100%;
+    }
+    .table-box .tablehead th{
+        padding: 12px 5px;
+    
+    }
+    .table-box .tablebody td{
+        padding: 7px 3px;
+    
+    }
+ }

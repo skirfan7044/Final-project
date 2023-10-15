@@ -1,0 +1,96 @@
+.admin {
+    width: 42%;
+    height: 450px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    margin: 110px auto 80px;
+    box-shadow: 1px 1px 5px 3px grey;
+    border-radius: 2px;
+}
+
+
+.admin .butt-log button:hover {
+    background-color: red;
+    transition: .4s;
+}
+
+.admin .adminbox button {
+    width: 310px;
+    background-color: rgb(119, 163, 15);
+    color: white;
+    font-size: 17px;
+    padding: 60px 60px;
+    text-align: center;
+    border: solid rgb(139, 136, 136) 2px;
+    border-radius: 2px;
+}
+
+.admin .adminbox button:hover {
+    background-color: rgb(147, 199, 24);
+}
+
+.admin h3 {
+    width: 100%;
+    text-align: end;
+    padding: 10px;
+    margin: -200px 0px;
+}
+
+@media screen and (max-width:1630px) {
+    .admin {
+        width: 50%;
+    }
+}
+
+@media screen and (max-width:1300px) {
+    .admin {
+        width: 60%;
+    }
+}
+
+@media screen and (max-width:1080px) {
+    .admin {
+        width: 80%;
+    }
+
+    .admin .adminbox button {
+        width: 250px;
+        font-size: 13px;
+        padding: 40px 20px;
+    }
+}
+
+@media screen and (max-width:710px) {
+    .admin {
+        width: 70%;
+        height: 550px;
+        margin: 35px auto;
+    }
+
+    .admin .adminbox button {
+        width: 290px;
+        font-size: 13px;
+        padding: 40px 20px;
+        margin-top: 10px;
+    }
+}
+
+@media screen and (max-width:460px) {
+    .admin {
+        width: 90%;
+        height: 550px;
+        margin-bottom: 20px;
+    }
+}
+
+@media screen and (max-width:340px) {
+    .admin {
+        width: 95%;
+    }
+
+    .admin .adminbox button {
+        width: 250px;
+    }
+}

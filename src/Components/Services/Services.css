@@ -1,0 +1,119 @@
+.ser {
+    width: 65%;
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 85px auto 50px;
+    border: solid rgb(111, 110, 110) 2px;
+    border-radius: 3px;
+    flex-direction: row;
+    box-shadow: 2px 4px 4px 2px grey;
+    font-size: 18px;
+    background-color: white;
+}
+
+.ser h1 {
+    width: 100%;
+    text-align: center;
+    padding: 2px;
+    font-size: 33px;
+    /* background-color:rgb(61, 94, 163) ; */
+    background-image: linear-gradient(to bottom left, rgb(104, 153, 21), rgb(119, 154, 36), rgb(110, 148, 20));
+    border-bottom: solid rgb(111, 110, 110) 2px;
+    color: white;
+}
+
+.serdes h4 {
+    padding: 3px 0px;
+}
+
+.ser .imgser {
+    width: 50%;
+    border-right: solid rgb(139, 139, 139) 2px;
+}
+
+.ser .imgser img {
+    width: 100%;
+    height: 100%;
+}
+
+.ser .serdes {
+    width: 100%;
+    padding: 15px 20px;
+}
+
+.ser .serdes ul {
+    padding: 15px 30px 15px;
+}
+
+.serdes .btn-part button {
+    width: 30%;
+    margin: 30px 19px 20px;
+    padding: 11px;
+    color: rgb(79, 115, 7);
+    font-weight: 700px;
+    border-radius: 5px;
+    border: solid rgb(117, 157, 37) 1px;
+    background-color: white;
+
+}
+
+.serdes .btn-part button:hover {
+    background-color: rgb(110, 148, 20);
+    color: white;
+    border: none;
+    transition: 0.5s;
+}
+
+@media screen and (max-width:1830px) {
+    .ser {
+        width: 75%;
+    }
+}
+@media screen and (max-width:1580px) {
+    .ser {
+        width: 80%;
+    }
+    .serdes .btn-part button {
+        width: 27%;
+        margin: 30px 30px 20px;
+    }
+}
+@media screen and (max-width:1245px) {
+    .ser {
+        width: 85%;
+        margin-top: 50px;
+    }
+    .serdes .btn-part button {
+        width: 27%;
+        margin: 30px 20px 20px;
+    }
+}
+@media screen and (max-width:795px) {
+    .ser {
+        width: 90%;
+        margin-top: 50px;
+    }
+    .serdes .btn-part button {
+        width: 40%;
+        margin: 30px 15px 20px;
+    }
+}
+@media screen and (max-width:795px) {
+    .ser {
+        width: 97%;
+        margin-top: 30px;
+        margin-bottom: 25px;
+    }
+    .serdes .btn-part button {
+        width: 45%;
+        margin: 10px 15px 20px;
+    }
+}
+@media screen and (max-width:352px) {
+    .serdes .btn-part button {
+        width: 65%;
+        margin: 10px 15px 12px;
+    }
+}

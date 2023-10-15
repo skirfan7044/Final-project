@@ -1,0 +1,146 @@
+@import url('https://fonts.googleapis.com/css2?family=Bree Serif&family=Pacifico&display=swap');
+
+.contact-form {
+    width: 35%;
+    height: auto;
+    /* border: solid rgb(39, 173, 41) 2px; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 120px auto 90px;
+    box-shadow: 2px 3px 5px 3px grey;
+    background-color: white;
+}
+
+body {
+    background-image: linear-gradient(to bottom right, rgb(255, 255, 255), rgb(241, 249, 240));
+    background-repeat: no-repeat;
+    height: auto;
+    font-family: 'Bree Serif', sans-serif;
+}
+
+.contact-form h1 {
+    text-align: center;
+    padding: 25px 0px 32px;
+    color: rgb(99, 154, 27);
+}
+
+.contact-form input {
+    display: block;
+    width: 545px;
+    margin: 0px 50px 30px 50px;
+    padding: 14px 10px;
+    border: solid rgb(99, 154, 27) 1.3px;
+}
+
+#address {
+    padding: 10px 10px 80px;
+}
+
+#submit {
+    margin: 40px 50px;
+    background-image: linear-gradient(to bottom left, rgb(90, 144, 19), rgb(105, 143, 17));
+    color: white;
+    border: none;
+    padding: 12px;
+}
+
+#submit:hover {
+    background-image: linear-gradient(to bottom left, rgb(98, 150, 30), rgb(119, 159, 28));
+
+}
+
+.error {
+    color: red;
+    font-size: 15px;
+    text-align: end;
+    padding-right: 55px;
+    padding-bottom: 30px;
+    margin-top: -25px;
+
+}
+
+@media screen and (max-width:1780px) {
+    .contact-form {
+        width: 40%;
+    }
+}
+
+@media screen and (max-width:1400px) {
+    .contact-form {
+        width: 47%;
+    }
+
+    .contact-form input {
+        width: 500px;
+    }
+}
+
+@media screen and (max-width:1100px) {
+    .contact-form {
+        width: 60%;
+    }
+}
+
+@media screen and (max-width:900px) {
+    .contact-form {
+        width: 75%;
+        margin-top: 60px;
+    }
+
+    .contact-form input {
+        width: 500px;
+    }
+}
+
+@media screen and (max-width:700px) {
+    .contact-form {
+        width: 85%;
+    }
+
+    .contact-form input {
+        width: 430px;
+    }
+}
+
+@media screen and (max-width:540px) {
+    .contact-form {
+        width: 90%;
+        margin-bottom: 20px;
+    }
+
+    .contact-form input {
+        width: 370px;
+    }
+}
+
+@media screen and (max-width:450px) {
+    .contact-form {
+        width: 94%;
+        margin-top: 35px;
+    }
+
+    .contact-form input {
+        width: 330px;
+    }
+}
+
+@media screen and (max-width:390px) {
+    .contact-form {
+        width: 95%;
+    }
+
+    .contact-form input {
+        width: 275px;
+    }
+}
+
+@media screen and (max-width:300px) {
+    .contact-form input {
+        width: 220px;
+    }
+
+    .contact-form h1 {
+        font-size: 25px;
+    }
+}

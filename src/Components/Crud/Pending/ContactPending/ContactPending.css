@@ -1,0 +1,66 @@
+*{
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;  
+}
+.containerr{
+    margin:100px auto 150px;
+    width: 40%;
+    background-color: white;
+    text-align: start;
+    padding: 40px 40px 40px 40px;
+    box-shadow: rgb(122, 120, 120) 2px 2px 3px 3px;
+}
+.containerr h3{
+    margin-bottom: 12px;
+    font-size: 25px;
+}
+.containerr button{
+    margin-top: 30px;
+    width: 40%;
+    height: 35px;
+    border-radius: 5px;
+    background-color: rgb(113, 153, 19);
+    color: rgb(255, 255, 255);
+    border: solid rgb(161, 159, 159) 2px;
+}
+.containerr button:hover{
+    background-color:rgb(124, 165, 27);
+    color: white;
+    transition: .5s;
+}
+.edit{
+    margin-left: 20px;
+}
+.edit:hover{
+    background-color: rgb(252, 248, 14) !important;
+    transition: .5s;
+    color: black !important;
+
+}
+@media screen and (max-width:1519px) {
+    .containerr{
+        width: 65%;
+        margin: 70px auto 35px;
+    }
+    .containerr button{
+        width: 50%;
+    }  
+}
+@media screen and (max-width:800px) {
+    .containerr{
+        width: 80%;
+        padding: 40px 15px 40px 15px;
+    }
+    .containerr button{
+        width: 60%;
+    }
+}
+
+@media screen and (max-width:525px) {
+    .containerr{
+        width: 94%;
+        margin: 35px auto 25px;
+    }   
+}
+

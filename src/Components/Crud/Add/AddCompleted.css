@@ -1,0 +1,14 @@
+.addform input{
+    border: solid rgb(99, 154, 27) 1px;
+    margin-bottom: 13px;
+    
+}
+#client_name,#client_address{
+    border: none;
+    border: solid rgb(99, 154, 27) 1px;
+}
+.contact-form label{
+    display: block;
+    margin-left: 62px;
+    margin-bottom: 2px;
+}
