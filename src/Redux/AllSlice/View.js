@@ -76,7 +76,7 @@ export const deleteCompleted = createAsyncThunk("auth/deleteCompleted",
     });
 
 
-export const viewSlice = createSlice({
+export const ViewSlice = createSlice({
     name: "auth",
     initialState: initial_value,
     extraReducers: (builder) => {
@@ -274,4 +274,4 @@ export const viewSlice = createSlice({
 })
 
 
-export default viewSlice.reducer
+export default ViewSlice.reducer

@@ -1,11 +1,11 @@
 import { configureStore } from "@reduxjs/toolkit";
 import UserSlice from "../AllSlice/User";
-import viewSlice from "../AllSlice/View";
+import ViewSlice from "../AllSlice/View";
 
 
 const Store = configureStore({
     reducer: {
-        comp:viewSlice,
+        comp:ViewSlice,
         user:UserSlice
     }
 })
