@@ -16,10 +16,10 @@ const initial_value = {
     profile_pic: "",
     message: "",
     errMsg: "",
-    authToken: ""
+    authToken: "",
 };
 
-export const sign_up = createAsyncThunk("admin/sign_up",
+export const sign_up = createAsyncThunk("auth/sign_up",
     async (userdata) => {
         const res = await axios.post(reg_api, userdata, {
             headers: {
@@ -30,9 +30,9 @@ export const sign_up = createAsyncThunk("admin/sign_up",
         // console.log("api res: ",res.data);
         return res?.data;
     })
-    
 
-export const sign_In = createAsyncThunk("admin/sign_In",
+
+export const sign_In = createAsyncThunk("auth/sign_In",
     async (userdata) => {
         const res = await axios.post(signin_api, userdata, {
             headers: {
@@ -45,13 +45,14 @@ export const sign_In = createAsyncThunk("admin/sign_In",
     })
 
 
-export const logOut = createAsyncThunk("admin/profile",
+export const logOut = createAsyncThunk("auth/logOut",
     async () => {
-        window.sessionStorage.clear("Token")
+        window.localStorage.clear("authToken");
+        window.sessionStorage.clear("authToken");
     })
 
 
-export const postCompleted = createAsyncThunk("admin/postCompleted",
+export const postCompleted = createAsyncThunk("auth/postCompleted",
     async (userData) => {
         const res = await axios.post(api_url, userData)
         // console.log("posting data: ",res);
@@ -59,7 +60,7 @@ export const postCompleted = createAsyncThunk("admin/postCompleted",
     });
 
 
-export const completed = createAsyncThunk("admin/completed",
+export const completed = createAsyncThunk("auth/completed",
     async () => {
         const res = await axios.get(api_url)
         // console.log("fetching data: ",res);
@@ -67,7 +68,7 @@ export const completed = createAsyncThunk("admin/completed",
     });
 
 
-export const deleteCompleted = createAsyncThunk("admin/deleteCompleted",
+export const deleteCompleted = createAsyncThunk("auth/deleteCompleted",
     async (id) => {
         const res = await axios.delete(`${api_url}/${id}`)
         // console.log("Delete response: ", res);
@@ -75,8 +76,8 @@ export const deleteCompleted = createAsyncThunk("admin/deleteCompleted",
     });
 
 
-export const AdminSlice = createSlice({
-    name: "admin",
+export const viewSlice = createSlice({
+    name: "auth",
     initialState: initial_value,
     extraReducers: (builder) => {
 
@@ -84,7 +85,7 @@ export const AdminSlice = createSlice({
             state.isLoading = true;
         })
         builder.addCase(sign_up.fulfilled, (state, action) => {
-            console.log("action:", action);
+            // console.log("action:", action);
             if (action.payload.status === 200) {
                 state.isLoading = false;
                 state.status = action.payload.status;
@@ -97,29 +98,46 @@ export const AdminSlice = createSlice({
                     title: 'Your account has been created',
                     showConfirmButton: true,
                     timer: 1500
-                })
+                });
             }
             else {
                 Swal.fire({
                     icon: 'error',
                     title: 'Oops...',
                     text: 'Something went wrong!',
-                })
+                });
             }
         })
         builder.addCase(sign_up.rejected, (state, action) => {
-            console.log("actions:", action);
+            // console.log("actions:", action);
             state.isLoading = false;
             state.create = [];
             state.error = action.error.message;
         })
 
+
+
         builder.addCase(sign_In.pending, (state, action) => {
             state.isLoading = true;
         })
         builder.addCase(sign_In.fulfilled, (state, action) => {
-            console.log("action:", action);
-            if (action.payload.status === 200) {
+            // console.log("action:", action);
+            if (action.payload.status === 200 && action.payload.data.email === "skirfan7044@gmail.com") {
+                window.localStorage.setItem("authToken", action.payload.token);
+                state.isLoading = false;
+                state.status = action.payload.status;
+                state.first_name = action.payload.data.first_name;
+                state.last_name = action.payload.data.last_name;
+                state.email = action.payload.data.email;
+                state.message = action.payload.data.message;
+                Swal.fire({
+                    icon: 'success',
+                    title: `Welcome back admin! ${state.first_name} ${state.last_name}`,
+                    showConfirmButton: true,
+                    timer: 2000
+                });
+            }
+            else if (action.payload.status === 200) {
                 window.sessionStorage.setItem("authToken", action.payload.token);
                 state.isLoading = false;
                 state.status = action.payload.status;
@@ -131,15 +149,15 @@ export const AdminSlice = createSlice({
                     icon: 'success',
                     title: `Welcome back! ${state.first_name} ${state.last_name}`,
                     showConfirmButton: true,
-                    timer: 1500
-                })
+                    timer: 2000
+                });
             }
             else {
                 Swal.fire({
                     icon: 'error',
                     title: 'Oops...',
                     text: 'Wrong userId or password!',
-                })
+                });
             }
         })
         builder.addCase(sign_In.rejected, (state, action) => {
@@ -148,6 +166,7 @@ export const AdminSlice = createSlice({
             state.create = [];
             state.error = action.error.message;
         })
+
 
 
         builder.addCase(logOut.pending, (state, action) => {
@@ -161,11 +180,11 @@ export const AdminSlice = createSlice({
                 icon: 'success',
                 title: 'logout sucessfully',
                 showConfirmButton: true,
-                timer: 1000
+                timer: 2000
             })
         })
         builder.addCase(logOut.rejected, (state, action) => {
-            // console.log("Action: ",action);
+            // console.log("Action: ", action);
             state.isLoading = false;
             Swal.fire({
                 icon: 'error',
@@ -200,6 +219,8 @@ export const AdminSlice = createSlice({
                 text: 'Something went wrong!',
             })
         })
+
+
 
 
         builder.addCase(completed.pending, (state, action) => {
@@ -253,4 +274,4 @@ export const AdminSlice = createSlice({
 })
 
 
-export default AdminSlice.reducer
+export default viewSlice.reducer

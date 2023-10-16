@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch} from 'react-redux';
 import { BsArrowLeftSquare } from "react-icons/bs";
 import { sign_In } from '../../Redux/AllSlice/View';
 import { Link, useNavigate } from 'react-router-dom';
@@ -29,10 +29,14 @@ const Login = () => {
     formData.append("password", inputState.password)
 
     dispatch(sign_In(formData));
-    setTimeout(() => {
-      navigate("/services")
-      window.location.reload();
-    }, 1500);
+    setTimeout(() =>{
+      if(window.sessionStorage.getItem("authToken") || window.localStorage.getItem("authToken")){
+        navigate("/services")
+      }
+      else{
+        console.log("")
+      }
+    }, 2000);
   }
   return (
     <div className="login-form">
@@ -47,6 +51,7 @@ const Login = () => {
 
         <label htmlFor="password">Password </label>
         <input type="password" name='password' id='password' placeholder='Enter password' onChange={changehandeler} />
+        
         <p>Forgot password ?</p>
         <p><span className="spcolor">Don't have an account?</span> <Link to="/create-account"> Create an account</Link></p>
 

@@ -1,13 +1,13 @@
 import React from 'react'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import Header from '../Layout/Header/Header'
+import Footer from '../Layout/Footer/Footer'
 import Home from '../Components/Home/Home'
 import Services from '../Components/Services/Services'
 import About from '../Components/About/About'
-import Header from '../Layout/Header/Header'
 import Contact from '../Components/Contact/Contact'
 import PNF from '../Layout/PNF/PNF'
 import Gallery from '../Components/Gallery/Gallery'
-import Footer from '../Layout/Footer/Footer'
 import AddCompleted from '../Components/Crud/Add/AddCompleted'
 import RemoveCompleted from '../Components/Crud/Remove/RemoveCompleted'
 import Admin from '../Components/Admin/Admin'
@@ -20,6 +20,7 @@ import ProtectedRoutes from './ProtectedRoutes'
 import CreateAccount from '../Components/CreateAccount/CreateAccount'
 import Login from '../Components/Login/Login'
 import ContactMember from '../Components/ContactMember/ContactMember'
+import AdminProtectedRoutes from './AdminProtectedRoutes'
 
 const RootRouting = () => {
   return (
@@ -34,17 +35,20 @@ const RootRouting = () => {
           <Route path='contact' element={<Contact />} />
           <Route path='login' element={<Login />} />
           <Route path='create-account' element={<CreateAccount />} />
-          <Route path='add-completed-project' element={<AddCompleted />} />
-          <Route path='remove-completed-project' element={<RemoveCompleted />} />
-          <Route path='admin' element={<Admin />} />
-          <Route path='contact-view' element={<ContactView />} />
-          <Route path='contact-confirm/:cid' element={<ContactPending />} />
-          <Route path='estimation-view' element={<EstimationView />} />
-          <Route path='estimation-confirm/:eid' element={<EstimationPending />} />
 
           <Route element={<ProtectedRoutes />}>
             <Route path='contact-member' element={<ContactMember />} />
             <Route path='estimation' element={<Estimation />} />
+          </Route>
+
+          <Route element={<AdminProtectedRoutes />}>
+            <Route path='admin' element={<Admin />} />
+            <Route path='add-completed-project' element={<AddCompleted />} />
+            <Route path='remove-completed-project' element={<RemoveCompleted />} />
+            <Route path='contact-view' element={<ContactView />} />
+            <Route path='contact-confirm/:cid' element={<ContactPending />} />
+            <Route path='estimation-view' element={<EstimationView />} />
+            <Route path='estimation-confirm/:eid' element={<EstimationPending />} />
           </Route>
 
           <Route path='*' element={<PNF />} />

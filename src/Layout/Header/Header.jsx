@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { AppBar, Box, Divider, Drawer, IconButton, Toolbar, Typography, Button } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import { Link, useNavigate } from "react-router-dom";
-import { BsFillPeopleFill,BsBoxArrowRight } from "react-icons/bs";
+import { BsFillPeopleFill, BsBoxArrowRight } from "react-icons/bs";
 import { useDispatch } from "react-redux";
 import { logOut } from "../../Redux/AllSlice/View";
 import './Header.css'
@@ -10,12 +10,20 @@ import './Header.css'
 const Header = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  const log =window.sessionStorage.getItem( "authToken")
+  const log = window.sessionStorage.getItem("authToken");
+  const logAdmin = window.localStorage.getItem("authToken");
+  // console.log("sessionStorage :",log);
+  // console.log("localStorage :",logAdmin);
   const logoutHandeler = () => {
     dispatch(logOut());
-    setTimeout(() => {
-      navigate("/")
-    }, 1000);
+    setTimeout(() =>{
+      if(window.sessionStorage.getItem("authToken")===null && window.localStorage.getItem("authToken")===null){
+        navigate("/login")
+      }
+      else{
+        console.log("login navigate error")
+      }
+    }, 2000);
   };
 
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -35,7 +43,7 @@ const Header = () => {
         <img src="../../../../assets/logorm.png" alt="logo" />
       </Typography>
       <Divider />
-      {log? <Button className="whitee" onClick={logoutHandeler}><BsBoxArrowRight size={32}/></Button> : <Link to="/login"><Button className="whitee"><BsFillPeopleFill size={32}/></Button></Link>}
+      {log || logAdmin? <Button className="whitee" onClick={logoutHandeler}><BsBoxArrowRight size={32} /></Button> : <Link to="/login"><Button className="whitee"><BsFillPeopleFill size={32} /></Button></Link>}
       <Link to="/">
         <Button className="white">Home</Button>
       </Link>
@@ -51,7 +59,7 @@ const Header = () => {
       <Link to="/contact">
         <Button className="white">Contact</Button>
       </Link>
- 
+
     </Box>
   );
   return (
@@ -96,7 +104,7 @@ const Header = () => {
               <Link to="/contact">
                 <Button className="white">Contact</Button>
               </Link>
-            {log? <Button className="whitee" onClick={logoutHandeler}><BsBoxArrowRight size={32}/></Button> : <Link to="/login"><Button className="whitee"><BsFillPeopleFill size={32}/></Button></Link>}
+              {log || logAdmin? <Button className="whitee" onClick={logoutHandeler}><BsBoxArrowRight size={32} /></Button> : <Link to="/login"><Button className="whitee"><BsFillPeopleFill size={32} /></Button></Link>}
             </Box>
           </Toolbar>
         </AppBar>

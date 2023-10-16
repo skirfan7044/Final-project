@@ -42,7 +42,7 @@ export const contactUpdate = createAsyncThunk("user/contactUpdate",
     async (upDate) => {
         const { id, formValue } = upDate;
         const res = await axios.put(`${contact_url}/${id}`, formValue)
-        console.log("Res for update: ", upDate);
+        // console.log("Res for update: ", upDate);
         return res?.data;
     });
 
@@ -51,8 +51,6 @@ export const contactDelete = createAsyncThunk("user/contactDelete",
         const res = await axios.delete(`${contact_url}/${dataId}`)
         return res?.data;
     });
-
-
 
 
 export const estimationPost = createAsyncThunk("user/estimationPost",
@@ -74,6 +72,7 @@ export const EstimationUpdate = createAsyncThunk("user/EstimationUpdate",
         console.log("Res for update: ", upDate);
         return res?.data;
     });
+
 export const estimationDelete = createAsyncThunk("user/estimationDelete",
     async (dataId) => {
         const res = await axios.delete(`${estimation_url}/${dataId}`)
@@ -175,7 +174,7 @@ export const UserSlice = createSlice({
             state.isLoading = true;
         })
         builder.addCase(contactDelete.fulfilled, (state, action) => {
-            console.log("Action: ", action);
+            // console.log("Action: ", action);
             state.isLoading = false;
             state.isLoading = false;
             Swal.fire({

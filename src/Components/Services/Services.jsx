@@ -32,15 +32,13 @@ const Services = () => {
           <li>Civil Planning, Designing & Renovation</li>
         </ul>
         <div className="btn-part">
-          <Link to="/estimation">
-            <button>Get a estimation</button>
-          </Link>
-          <Link to={"/contact-member"}>
-            <button>Contact a member</button>
-          </Link>
-          <Link to="/admin" target='_blank'>
-            <button>Admin page</button>
-          </Link>
+
+          <Link to="/estimation"><button>Get a estimation</button></Link>
+
+          <Link to={"/contact-member"}><button>Contact a member</button></Link>
+
+          {window.localStorage.getItem("authToken") && <Link to="/admin" target='_blank'><button>Admin page</button></Link>}
+
         </div>
       </div>
     </div>
