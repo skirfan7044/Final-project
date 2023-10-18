@@ -21,8 +21,8 @@ const ContactPending = () => {
     contact_status: "",
     id: ""
   });
-
   const [inputState2, setInputState2] = useState({ contact_status: "Contacted" });
+
   const btnstatus=inputState.contact_status==="pending";
   useEffect(() => {
     dispatch(contactView())

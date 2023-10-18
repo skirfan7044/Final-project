@@ -122,22 +122,7 @@ export const ViewSlice = createSlice({
         })
         builder.addCase(sign_In.fulfilled, (state, action) => {
             // console.log("action:", action);
-            if (action.payload.status === 200 && action.payload.data.email === "skirfan7044@gmail.com") {
-                window.localStorage.setItem("token", action.payload.token);
-                state.isLoading = false;
-                state.status = action.payload.status;
-                state.first_name = action.payload.data.first_name;
-                state.last_name = action.payload.data.last_name;
-                state.email = action.payload.data.email;
-                state.message = action.payload.data.message;
-                Swal.fire({
-                    icon: 'success',
-                    title: `Welcome back admin! ${state.first_name} ${state.last_name}`,
-                    showConfirmButton: true,
-                    timer: 2000
-                });
-            }
-            else if (action.payload.status === 200 && action.payload.data.email === "smaranjit.sardar@gmail.com") {
+            if (action.payload.status === 200 && (action.payload.data.email === "skirfan7044@gmail.com" || action.payload.data.email === "smaranjit.sardar@gmail.com")) {
                 window.localStorage.setItem("token", action.payload.token);
                 state.isLoading = false;
                 state.status = action.payload.status;

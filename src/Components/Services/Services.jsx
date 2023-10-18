@@ -15,9 +15,10 @@ const Services = () => {
         <img src="../../../../assets/secondcopy.jpg" alt="" />
       </div> */}
       <div className="serdes">
-        <h4>For over 2 years, RM Interior has worked to ensure the best quality service and most innovative design executions in India. Based out of 4 locations that include Kolkata, Delhi, Mumbai and Bengalore , the company has focused on a customer first policy since its inception.</h4>
 
+        <h4>For over 2 years, RM Interior has worked to ensure the best quality service and most innovative design executions in India. Based out of 4 locations that include Kolkata, Delhi, Mumbai and Bengalore , the company has focused on a customer first policy since its inception.</h4>
         <h4> We have always taken pride in our work and clients have always spoken highly of our very young a vibrant team of designers and architects. Have a place you want some innovation for in terms of designs? Prices of standard design firms burning a hole in your pocket? Give RM Interior ring. After all, the world does know us as “The Design People”.</h4>
+
         <ul>
           <li>Planning and Designing</li>
           <li>Modular Kitchen</li>
@@ -32,14 +33,11 @@ const Services = () => {
           <li>Electrical Goods</li>
           <li>Civil Planning, Designing & Renovation</li>
         </ul>
+
         <div className="btn-part">
-
           <Link to="/estimation"><button>Get a estimation</button></Link>
-
           <Link to={"/contact-member"}><button>Contact a member</button></Link>
-
           {isAuth? <Link to="/admin" target='_blank'><button>Admin page</button></Link> : <Link to="/contact"><button>Contact</button></Link>}
-
         </div>
       </div>
     </div>

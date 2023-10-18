@@ -9,14 +9,17 @@ const carousal_url = 'http://localhost:2000/carousel';
 const initial_value = {
     isLoading: false,
     error: null,
+    status: 0,
     full_name: "",
     subject: "",
     address: "",
     mobile_number: "",
     email: "",
+    square_feet:"",
+    contact_status:"",
+    estimation_status:"",
     id: ""
 };
-
 
 
 export const carousal = createAsyncThunk("user/carousal",
@@ -60,7 +63,7 @@ export const estimationPost = createAsyncThunk("user/estimationPost",
     });
 
 export const estimationView = createAsyncThunk("user/estimationView",
-    async (id) => {
+    async () => {
         const res = await axios.get(estimation_url)
         return res?.data;
     });
