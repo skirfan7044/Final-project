@@ -4,6 +4,7 @@ import AOS from 'aos';
 import { Link } from 'react-router-dom';
 
 const Services = () => {
+  const isAuth=window.localStorage.getItem("token");
   useEffect(() => {
     AOS.init();
   }, []);
@@ -37,7 +38,7 @@ const Services = () => {
 
           <Link to={"/contact-member"}><button>Contact a member</button></Link>
 
-          {window.localStorage.getItem("authToken") && <Link to="/admin" target='_blank'><button>Admin page</button></Link>}
+          {isAuth? <Link to="/admin" target='_blank'><button>Admin page</button></Link> : <Link to="/contact"><button>Contact</button></Link>}
 
         </div>
       </div>

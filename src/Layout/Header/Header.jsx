@@ -11,13 +11,13 @@ const Header = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const log = window.sessionStorage.getItem("authToken");
-  const logAdmin = window.localStorage.getItem("authToken");
+  const logAdmin = window.localStorage.getItem("token");
   // console.log("sessionStorage :",log);
   // console.log("localStorage :",logAdmin);
   const logoutHandeler = () => {
     dispatch(logOut());
     setTimeout(() =>{
-      if(window.sessionStorage.getItem("authToken")===null && window.localStorage.getItem("authToken")===null){
+      if(window.sessionStorage.getItem("authToken")===null && window.localStorage.getItem("token")===null){
         navigate("/login")
       }
       else{

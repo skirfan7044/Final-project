@@ -13,7 +13,6 @@ const initial_value = {
     last_name: "",
     email: "",
     password: "",
-    profile_pic: "",
     message: "",
     errMsg: "",
     authToken: "",
@@ -47,7 +46,7 @@ export const sign_In = createAsyncThunk("auth/sign_In",
 
 export const logOut = createAsyncThunk("auth/logOut",
     async () => {
-        window.localStorage.clear("authToken");
+        window.localStorage.clear("token");
         window.sessionStorage.clear("authToken");
     })
 
@@ -123,7 +122,7 @@ export const ViewSlice = createSlice({
         builder.addCase(sign_In.fulfilled, (state, action) => {
             // console.log("action:", action);
             if (action.payload.status === 200 && action.payload.data.email === "skirfan7044@gmail.com") {
-                window.localStorage.setItem("authToken", action.payload.token);
+                window.localStorage.setItem("token", action.payload.token);
                 state.isLoading = false;
                 state.status = action.payload.status;
                 state.first_name = action.payload.data.first_name;
