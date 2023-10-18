@@ -18,16 +18,16 @@
 .containerr button{
     margin-top: 30px;
     width: 40%;
-    height: 35px;
+    height: 37px;
     border-radius: 5px;
-    background-color: rgb(113, 153, 19);
+    background-color: rgb(120, 161, 25);
     color: rgb(255, 255, 255);
-    border: solid rgb(161, 159, 159) 2px;
+    border: none;
 }
 .containerr button:hover{
-    background-color:rgb(124, 165, 27);
+    background-color:rgb(103, 129, 38);
     color: white;
-    transition: .5s;
+    transition: .4s;
 }
 .edit{
     margin-left: 20px;

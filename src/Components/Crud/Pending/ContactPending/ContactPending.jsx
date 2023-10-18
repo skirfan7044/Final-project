@@ -23,7 +23,7 @@ const ContactPending = () => {
   });
 
   const [inputState2, setInputState2] = useState({ contact_status: "Contacted" });
-
+  const btnstatus=inputState.contact_status==="pending";
   useEffect(() => {
     dispatch(contactView())
       .then(ress => {
@@ -78,7 +78,7 @@ const ContactPending = () => {
         <h3><b>Subject : </b> {inputState.subject}</h3>
         <h3><b>Address : </b> {inputState.address}</h3>
         <h3><b>Status : </b> {inputState.contact_status}</h3>
-        <button onClick={changeHandeler}>Contact done</button>
+       {btnstatus? <button onClick={changeHandeler}>Contact done</button> : <h3 className="green">We have contacted</h3>}
       </div>
 
     </div>

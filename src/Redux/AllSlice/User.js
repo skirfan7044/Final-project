@@ -60,7 +60,7 @@ export const estimationPost = createAsyncThunk("user/estimationPost",
     });
 
 export const estimationView = createAsyncThunk("user/estimationView",
-    async () => {
+    async (id) => {
         const res = await axios.get(estimation_url)
         return res?.data;
     });

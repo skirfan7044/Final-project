@@ -30,7 +30,7 @@ const Login = () => {
 
     dispatch(sign_In(formData));
     setTimeout(() =>{
-      if(window.sessionStorage.getItem("authToken") || window.localStorage.getItem("authToken")){
+      if(window.sessionStorage.getItem("authToken") || window.localStorage.getItem("token")){
         navigate("/services")
       }
       else{

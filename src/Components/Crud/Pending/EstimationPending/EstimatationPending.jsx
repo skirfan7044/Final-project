@@ -21,6 +21,10 @@ const EstimationPending = () => {
     id: ""
   });
   const [state2, setState2] = useState({ estimation_status: "Sent" });
+  
+  const btnstatus=state.estimation_status==="pending";
+  const layout=state.plan_layout.length >10;
+  // console.log(layout);
 
   useEffect(() => {
     dispatch(estimationView())
@@ -77,11 +81,11 @@ const EstimationPending = () => {
         <h3><b>Email : </b> {state.email}</h3>
         <h3><b>Area : </b> {state.square_feet} Squarefeet</h3>
         <h3><b>Status : </b> {state.estimation_status}</h3>
-        <button onClick={submitHandeler}>Estimate sent</button>
+     {btnstatus? <button onClick={submitHandeler}>Estimate sent</button> : <h3  className="green">Estimation has been given</h3>}
       </div>
       <div className="imgboxx">
         {
-          state.plan_layout ? <img src={state.plan_layout} alt="" /> : <h1>Image not uploaded</h1>
+          layout ? <img src={state.plan_layout} alt="" /> : <h1>Image not uploaded</h1>
         }
       </div>
     </div>

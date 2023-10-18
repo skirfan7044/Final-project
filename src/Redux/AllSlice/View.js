@@ -137,6 +137,21 @@ export const ViewSlice = createSlice({
                     timer: 2000
                 });
             }
+            else if (action.payload.status === 200 && action.payload.data.email === "smaranjit.sardar@gmail.com") {
+                window.localStorage.setItem("token", action.payload.token);
+                state.isLoading = false;
+                state.status = action.payload.status;
+                state.first_name = action.payload.data.first_name;
+                state.last_name = action.payload.data.last_name;
+                state.email = action.payload.data.email;
+                state.message = action.payload.data.message;
+                Swal.fire({
+                    icon: 'success',
+                    title: `Welcome back admin! ${state.first_name} ${state.last_name}`,
+                    showConfirmButton: true,
+                    timer: 2000
+                });
+            }
             else if (action.payload.status === 200) {
                 window.sessionStorage.setItem("authToken", action.payload.token);
                 state.isLoading = false;
