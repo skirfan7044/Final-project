@@ -34,7 +34,7 @@ const CreateAccount = () => {
             case 'last_name': err.last_name = value.length < 1 ? "Required feild" : ""
                 break;
 
-                case 'email': err.email = value.length < 1 ? "Required feild" : (valid_email.test(value) ? "" : "Email should be in this format ( name@example.com )")
+            case 'email': err.email = value.length < 1 ? "Required feild" : (valid_email.test(value) ? "" : "Email should be in this format ( name@example.com )")
                 break;
 
             case 'password': err.password = value.length < 1 ? "Required feild" : (valid_password.test(value) ? "" : "Choose a strong password")
@@ -50,7 +50,7 @@ const CreateAccount = () => {
 
     let submitHandeler = (event) => {
         event.preventDefault();
-        console.log("submitted value :", event);
+        // console.log("submitted value :", event);
 
         let formData = new FormData();
         formData.append("first_name", inputState.first_name)
@@ -58,7 +58,10 @@ const CreateAccount = () => {
         formData.append("email", inputState.email)
         formData.append("password", inputState.password)
         dispatch(sign_up(formData));
-        navigate("/login")
+        
+        setTimeout(() => {
+            navigate("/login")
+        }, 1500);
     }
 
     return (
