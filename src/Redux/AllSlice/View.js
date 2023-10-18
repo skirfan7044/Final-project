@@ -16,6 +16,7 @@ const initial_value = {
     message: "",
     errMsg: "",
     authToken: "",
+    token: ""
 };
 
 export const sign_up = createAsyncThunk("auth/sign_up",
