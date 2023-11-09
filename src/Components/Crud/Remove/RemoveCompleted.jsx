@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { completed, deleteCompleted } from '../../../Redux/AllSlice/View';
-import './RemoveCompleted.css'
 import Swal from 'sweetalert2';
+import { completed, deleteCompleted } from '../../../Redux/AllSlice/User';
+import './RemoveCompleted.css'
 const RemoveCompleted = () => {
   const [stateDelete, setStateDelete] = useState([]);
   const reversed =[...stateDelete].reverse();
-  const { isLoading, error } = useSelector(state => state.comp);
+  const { isLoading, error } = useSelector(state => state.user);
   // console.log("UseSelector in details: ",isLoading,detail,error);
   const dispatch = useDispatch();
   // console.log("State: ",state);

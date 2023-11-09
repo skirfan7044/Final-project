@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { useDispatch} from 'react-redux';
 import { BsArrowLeftSquare } from "react-icons/bs";
-import { sign_In } from '../../Redux/AllSlice/View';
+import { sign_In } from '../../Redux/AllSlice/User'; 
 import { Link, useNavigate } from 'react-router-dom';
 import './Login.css'
 

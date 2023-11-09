@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { sign_up } from '../../Redux/AllSlice/View';
+import { sign_up } from '../../Redux/AllSlice/User';
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import './CreateAccount.css'

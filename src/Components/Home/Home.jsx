@@ -5,7 +5,6 @@ import { carousal } from '../../Redux/AllSlice/User'
 import CompletedProject from '../CompletedProject/CompletedProject'
 import './Home.css'
 
-
 const Home = () => {
   const dispatch = useDispatch();
   const [image, setImage] = useState([]);
@@ -32,9 +31,9 @@ const Home = () => {
           infiniteLoop={true}
           emulateTouch={true}
         >
-          { image.map(muiCarousel => (
+          {image.map(muiCarousel => (
             <div key={muiCarousel.id}>
-              <img src={muiCarousel.carousel} alt='' />
+              <img src={muiCarousel.carousel} alt='carousal' />
             </div>
           ))}
         </Carousel>

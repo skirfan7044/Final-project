@@ -4,7 +4,7 @@ import MenuIcon from "@mui/icons-material/Menu";
 import { Link, useNavigate } from "react-router-dom";
 import { BsFillPeopleFill, BsBoxArrowRight } from "react-icons/bs";
 import { useDispatch } from "react-redux";
-import { logOut } from "../../Redux/AllSlice/View";
+import { logOut } from "../../Redux/AllSlice/User";
 import './Header.css'
 
 const Header = () => {

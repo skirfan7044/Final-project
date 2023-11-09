@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
-import './Services.css'
 import AOS from 'aos';
 import { Link } from 'react-router-dom';
+import './Services.css'
 
 const Services = () => {
   const isAuth=window.localStorage.getItem("token");

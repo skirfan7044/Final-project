@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import './AddCompleted.css'
 import { useDispatch } from 'react-redux';
-import { postCompleted } from '../../../Redux/AllSlice/View';
+import { postCompleted } from '../../../Redux/AllSlice/User';
 
 const AddCompleted = () => {
   const dispatch=useDispatch();

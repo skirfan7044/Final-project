@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { completed } from '../../Redux/AllSlice/View';
+import { completed } from '../../Redux/AllSlice/User';
 import './CompletedProject.css'
 
 
 const CompletedProject = () => {
   let [state, setState] = useState([]);
   const reversed = [...state].reverse();
-  const { isLoading, error } = useSelector(state => state.comp);
+  const { isLoading, error } = useSelector(state => state.user);
   // console.log("UseSelector in details: ",isLoading,detail,error);
   const dispatch = useDispatch();
   // console.log("State: ",state);
