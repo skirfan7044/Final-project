@@ -8,23 +8,23 @@ import './Login.css'
 const Login = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  let [inputState, setInput] = useState({
+  const [inputState, setInput] = useState({
     email: "",
     password: ""
   });
 
 
-  let changehandeler = (event) => {
+  const changehandeler = (event) => {
     event.persist();
-    let { name, value } = event.target
+    const { name, value } = event.target
     setInput({ ...inputState, [name]: value });
   }
 
-  let submitHandeler = (event) => {
+  const submitHandeler = (event) => {
     event.preventDefault();
     // console.log("submitted value :", inputState);
 
-    let formData = new FormData();
+    const formData = new FormData();
     formData.append("email", inputState.email)
     formData.append("password", inputState.password)
 

@@ -8,7 +8,7 @@ import './Estimation.css'
 const Estimation = () => {
     const navigate = useNavigate();
     const dispatch = useDispatch();
-    let [inputState, setInput] = useState({
+    const [inputState, setInput] = useState({
         full_name: "",
         address: "",
         mobile_number: "",
@@ -28,17 +28,17 @@ const Estimation = () => {
     }
 
 
-    let changehandeler = (event) => {
+    const changehandeler = (event) => {
         event.persist();
         let { name, value } = event.target
         setInput({ ...inputState, [name]: value });
     }
 
-    let submitHandeler = (event) => {
+    const submitHandeler = (event) => {
         event.preventDefault();
         // console.log("submitted value :", inputState);
 
-        let detail = {
+        const detail = {
             full_name: inputState.full_name,
             mobile_number: inputState.mobile_number,
             email: inputState.email,

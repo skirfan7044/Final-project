@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
-import './AddCompleted.css'
 import { useDispatch } from 'react-redux';
 import { postCompleted } from '../../../Redux/AllSlice/User';
+import './AddCompleted.css'
 
 const AddCompleted = () => {
   const dispatch=useDispatch();
@@ -56,10 +56,9 @@ const AddCompleted = () => {
     data.readAsDataURL(e.target.files[0])
   }
 
-
-  let submitHandeler = (event) => {
+  const submitHandeler = (event) => {
     event.preventDefault();
-    let detail = {
+    const detail = {
       bedroom: image1,
       living: image2,
       kitchen: image3,

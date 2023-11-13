@@ -7,7 +7,7 @@ import { BsArrowLeftSquare } from "react-icons/bs";
 import Swal from 'sweetalert2';
 
 const ContactView = () => {
-  let [state, setState] = useState([]);
+  const [state, setState] = useState([]);
   const reversed =[...state].reverse();
   const { isLoading, error } = useSelector(state => state.user);
   // console.log("UseSelector in details: ",isLoading,detail,error);

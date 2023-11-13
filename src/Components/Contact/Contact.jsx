@@ -7,7 +7,7 @@ import { useNavigate } from 'react-router-dom';
 const Contact = () => {
   const dispatch =useDispatch();
   const navigate =useNavigate();
-  let [inputState, setInput] = useState({
+  const [inputState, setInput] = useState({
     full_name: "",
     subject: "",
     address: "",
@@ -22,12 +22,12 @@ const Contact = () => {
     }
   });
 
-  let valid_email = RegExp('^([a-z0-9.-]+)@([a-z]{5,12}).([a-z.]{2,20})$');
+  const valid_email = RegExp('^([a-z0-9.-]+)@([a-z]{5,12}).([a-z.]{2,20})$');
 
-  let changehandeler = (event) => {
+  const changehandeler = (event) => {
     event.persist();
-    let { name, value } = event.target
-    let err = { ...inputState.isError }
+    const { name, value } = event.target
+    const err = { ...inputState.isError }
     switch (name) {
       case 'full_name': err.full_name = value.length < 1 ? "Required feild" :""
         break;
@@ -56,11 +56,11 @@ const Contact = () => {
     // console.log(err);
   }
 
-  let submitHandeler = (event) => {
+  const submitHandeler = (event) => {
     event.preventDefault();
     // console.log("submitted value :", inputState);
 
-    let detail = {
+    const detail = {
       full_name: inputState.full_name,
       mobile_number: inputState.mobile_number,
       email: inputState.email,

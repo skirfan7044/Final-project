@@ -1,6 +1,5 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
-import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { contactUpdate, contactView } from '../../../../Redux/AllSlice/User';
 import './ContactPending.css'
@@ -13,7 +12,7 @@ const ContactPending = () => {
   // console.log("Collected data from useParams :", cid);
 
   const [inputState, setInputState] = useState({
-    full_name: "", 
+    full_name: "",
     subject: "",
     address: "",
     mobile_number: "",
@@ -21,9 +20,8 @@ const ContactPending = () => {
     contact_status: "",
     id: ""
   });
-  const [inputState2, setInputState2] = useState({ contact_status: "Contacted" });
-
-  const btnstatus=inputState.contact_status==="pending";
+  const contact_statusC = "Contacted"
+  const btnstatus = inputState.contact_status === "pending";
   useEffect(() => {
     dispatch(contactView())
       .then(ress => {
@@ -36,7 +34,7 @@ const ContactPending = () => {
         // console.log("Error: ", err);
       })
 
-  }, [cid,dispatch]);
+  }, [cid, dispatch]);
 
   const changeHandeler = (event) => {
     event.preventDefault();
@@ -46,7 +44,7 @@ const ContactPending = () => {
       address: inputState.address,
       mobile_number: inputState.mobile_number,
       email: inputState.email,
-      contact_status: inputState2.contact_status,
+      contact_status: contact_statusC,
       id: inputState.id
     };
 
@@ -78,7 +76,7 @@ const ContactPending = () => {
         <h3><b>Subject : </b> {inputState.subject}</h3>
         <h3><b>Address : </b> {inputState.address}</h3>
         <h3><b>Status : </b> {inputState.contact_status}</h3>
-       {btnstatus? <button onClick={changeHandeler}>Contact done</button> : <h3 className="green">We have contacted</h3>}
+        {btnstatus ? <button onClick={changeHandeler}>Contact done</button> : <h3 className="green">We have contacted</h3>}
       </div>
 
     </div>

@@ -3,9 +3,10 @@ import { useDispatch, useSelector } from 'react-redux'
 import Swal from 'sweetalert2';
 import { completed, deleteCompleted } from '../../../Redux/AllSlice/User';
 import './RemoveCompleted.css'
+
 const RemoveCompleted = () => {
   const [stateDelete, setStateDelete] = useState([]);
-  const reversed =[...stateDelete].reverse();
+  const reversed = [...stateDelete].reverse();
   const { isLoading, error } = useSelector(state => state.user);
   // console.log("UseSelector in details: ",isLoading,detail,error);
   const dispatch = useDispatch();
@@ -48,12 +49,10 @@ const RemoveCompleted = () => {
             <h3> <i><b>Client address: </b> {details.client_address}</i></h3>
             <button onClick={() => deleteIt(details.id)}>Remove</button>
           </div>
-          {details.bedroom && <img src={details.bedroom} alt="" />}
-          {details.living && <img src={details.living} alt="" />}
-          {details.kitchen && <img src={details.kitchen} alt="" />}
-          {details.dining && <img src={details.dining} alt="" />}
-          {details.washroom && <img src={details.washroom} alt="" />}
-
+          {details.bedroom && <img src={details.bedroom} alt="bedroom" />}
+          {details.living && <img src={details.living} alt="living" />}
+          {details.kitchen && <img src={details.kitchen} alt="kitchen" />}
+          {details.dining && <img src={details.dining} alt="dining" />}
           <hr />
         </React.Fragment>
       ))}
